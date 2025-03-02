@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Log - Railway</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-train"></i> Vehicle Log - Railway</h1>
+        </header>
+        
+        <div class="main-grid">
+            <!-- Form Section -->
+            <section class="form-section card">
+                <h2>Add New Entry</h2>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="dateInput"><i class="fas fa-calendar-alt"></i> Date:</label>
+                        <input type="date" id="dateInput" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="startKmInput"><i class="fas fa-tachometer-alt"></i> Starting Km:</label>
+                        <input type="number" id="startKmInput" placeholder="e.g., 1000" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="endKmInput"><i class="fas fa-tachometer-alt"></i> End Km:</label>
+                        <input type="number" id="endKmInput" placeholder="e.g., 1250" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="purposeInput"><i class="fas fa-info-circle"></i> Purpose:</label>
+                        <input type="text" id="purposeInput" placeholder="e.g., Track Inspection" required>
+                    </div>
+                    <button onclick="addEntry()" class="btn btn-primary"><i class="fas fa-plus"></i> Add Entry</button>
+                </div>
+            </section>
+
+            <!-- Logs Section -->
+            <section class="logs-section card">
+                <h2>Log Entries</h2>
+                <table id="logTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Start Km</th>
+                            <th>End Km</th>
+                            <th>Running Km</th>
+                            <th>Purpose</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logBody"></tbody>
+                </table>
+            </section>
+
+            <!-- Monthly Totals Section -->
+            <section class="monthly-section card">
+                <h2>Monthly Totals</h2>
+                <button class="btn btn-download" onclick="downloadMonthlyReport()">
+                    <i class="fas fa-file-pdf"></i> Download Report as PDF
+                </button>
+                <table id="monthlyTable">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Total Running Km</th>
+                        </tr>
+                    </thead>
+                    <tbody id="monthlyBody"></tbody>
+                </table>
+            </section>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
