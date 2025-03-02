@@ -1,0 +1,4 @@
+Flask==2.3.2
+pandas==2.0.3
+pyexcel-ods==0.6.0
+reportlab==4.0.9

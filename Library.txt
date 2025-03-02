@@ -1,0 +1,29 @@
+
+vehicle-log-web-app/
+├── static/
+│   ├── styles.css
+│   └── script.js
+├── templates/
+│   └── index.html
+├── server.py
+├── vehicle_log.ods (initial file)
+├── requirements.txt
+
+
+
+
+IF IT WAS WRITTEN FULLY IN JS
+
+
+
+
+
+vehicle-log-web-app/
+├── public/
+│   ├── index.html
+│   ├── styles.css
+│   └── script.js
+├── server/
+│   ├── server.js
+│   └── vehicle_log.ods (initial file)
+├── package.json
