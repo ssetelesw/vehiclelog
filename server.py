@@ -124,4 +124,4 @@ def monthly_report():
     return send_file(pdf_buffer, download_name='Monthly_Running_Km_Report.pdf', as_attachment=True, mimetype='application/pdf')
 
 if __name__ == '__main__':
-    app.run(host='10.187.128.189', port=3000, debug=True)
+    app.run(host='0.0.0.0', port=80, debug=True)
